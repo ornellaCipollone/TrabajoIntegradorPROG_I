@@ -1,0 +1,36 @@
+.padre-buscador {
+    display: flex;
+}
+
+.padre-navegacion {
+    display: flex;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.menu-navegacion {
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    border-style:solid;
+    justify-content: space-around;
+}
+.buscador {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-weight:bold;
+}
+
+.padre-listados{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+}
+
+
