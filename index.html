@@ -5,19 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
     <header>
-        <section class="padre-buscador">
+        <div class="logo">
             <img class="logo" src="" alt="">
+        </div>
+
+        <section class="padre-buscador">
             <form action="searchresults.html">
-                <input class="buscador" type="text" name="buscador" placeholder="Buscador">
+                <input class="buscador" type="text" name="buscador" placeholder="Buscar...">
+                <button type="submit">Buscar</button>
             </form>
         </section>
-        <section class="padre-navegacioin">
+
+        <section class="padre-navegacion">
             <nav>
                 <ul class="menu-navegacion">
                     <li><a href="generos.html">Generos</a></li>
@@ -27,23 +32,25 @@
             </nav>
         </section>
     </header>
-    
+
     <section class="padre-listados">
-        <ul class="cancion">canciones
+        <ul class="canciones">Canciones
             <li></li>
             <li></li>
             <li></li>
             <li></li>
             <li></li>
         </ul>
-        <ul class="artista">artistas
+
+        <ul class="albumes">Álbumes
             <li></li>
             <li></li>
             <li></li>
             <li></li>
             <li></li>
         </ul>
-        <ul class="disco">discos
+
+        <ul class="artistas">Artistas
             <li></li>
             <li></li>
             <li></li>
@@ -51,6 +58,10 @@
             <li></li>
         </ul>
     </section>
+
+    <footer>
+        <p>Integrantes: Cipollone Ornella, Lohrmann Ramiro</p>
+    </footer>
 
     <script type="text/javascript" src="js/index.js"></script>
 </body>
