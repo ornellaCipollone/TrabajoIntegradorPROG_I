@@ -11,50 +11,48 @@
 
 <body>
     <header>
-        <div class="logo">
-            <!-- agregar el logotipo -->
-        </div>
-
-        <form id="searchForm" action="resultados.html">
-            <input type="text" id="searchInput" placeholder="Buscar..." required>
-            <button type="submit">Buscar</button>
-        </form>
-
-        <nav>
-            <!-- colocar los elementos del menú de navegación -->
-        </nav>
+        <section class="padre-buscador">
+            <img class="logo" src="" alt="">
+            <form action="searchresults.html">
+                <input class="buscador" type="text" name="buscador" placeholder="Buscador">
+            </form>
+        </section>
+        <section class="padre-navegacioin">
+            <nav>
+                <ul class="menu-navegacion">
+                    <li><a href="generos.html">Generos</a></li>
+                    <li><a href="playlists.html">Playlist</a></li>
+                    <li><a href="">Home</a></li>
+                </ul>
+            </nav>
+        </section>
     </header>
+    
+    <section class="padre-listados">
+        <ul class="cancion">canciones
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="artista">artistas
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <ul class="disco">discos
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
 
-    <ul class="cancion">Canciones
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-
-    <ul class="artista">artistas
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-
-    <ul class="disco">discos
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-
-    <footer>
-        <h2>Integrantes: Cipollone Ornella, Lohrmann Ramiro</h2>
-    </footer>
-
-    <script src="./js/index.js"></script>
-
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 
 </html>
