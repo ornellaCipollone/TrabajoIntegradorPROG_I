@@ -16,24 +16,24 @@
         </div>
 
         <section class="padre-buscador">
-            <form action="searchresults.html">
-                <input class="buscador" type="text" name="buscador" placeholder="Buscar...">
-                <button type="submit">Buscar</button>
+            <form id="form" action="searchresults.html">
+                <input id="buscador" type="text" name="buscador" placeholder="Buscar...">
+                <button id= "submit"type="submit">Buscar</button>
             </form>
         </section>
 
-        <section class="padre-navegacion">
+        <section >
             <nav>
                 <ul class="menu-navegacion">
-                    <li><a href="generos.html">Generos</a></li>
-                    <li><a href="playlists.html">Playlist</a></li>
-                    <li><a href="">Home</a></li>
+                    <li ><a class="items-navegacion" href="generos.html">Generos</a></li>
+                    <li c><a class="items-navegacion" href="playlists.html">Playlist</a></li>
+                    <li ><a class="items-navegacion" href="#index.html">Home</a></li>
                 </ul>
             </nav>
         </section>
     </header>
-
-    <section class="padre-listados">
+    <main class="padre-listados">
+    <section class="section-listados">
         <ul class="canciones">Canciones
             <li></li>
             <li></li>
@@ -41,7 +41,8 @@
             <li></li>
             <li></li>
         </ul>
-
+    </section>
+        <section class="section-listados" >
         <ul class="albumes">Álbumes
             <li></li>
             <li></li>
@@ -49,7 +50,8 @@
             <li></li>
             <li></li>
         </ul>
-
+     </section>
+     <section class="section-listados">
         <ul class="artistas">Artistas
             <li></li>
             <li></li>
@@ -58,12 +60,13 @@
             <li></li>
         </ul>
     </section>
+    </main>
 
     <footer>
         <p>Integrantes: Cipollone Ornella, Lohrmann Ramiro</p>
     </footer>
 
-    <script type="text/javascript" src="js/index.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
