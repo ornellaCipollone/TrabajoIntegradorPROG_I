@@ -1,7 +1,17 @@
-let buscador = document.querySelector(".buscador")
-if (buscador == "") {
+let buscador = document.querySelector("#buscador")
+let formulario = document.querySelector("#form")
+
+formulario.addEventListener('submit', function(e) {;
+ let terminoBuscador = buscador.value.trim();
+
+if (terminoBuscador === "") {
+    e.preventDefault()
     alert("ingrese texto")
+    return
 }
-else if (buscador.length < 3) {
+if (terminoBuscador.length < 3) {
+    e.preventDefault()
     alert("debe tener mas de 3 caracteres")
+    return
 }
+});

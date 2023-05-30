@@ -1,11 +1,49 @@
+header{
+    background-image:url(../img/fondo-header.jpg);
+    margin: none;
+    height: 200px;
+    border-bottom: 4px;
+    border-top: 4px;
+    padding: 0;
+    border-style: solid;
+    border-color: white;
+}
 .padre-buscador {
     display: flex;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
 }
 
-.padre-navegacion {
+#form {
     display: flex;
+    width: 500px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 800px;
 }
 
+#buscador {
+    display: flex;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+    height:20px;  
+}
+
+.items-navegacion {
+    text-decoration: none;
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+#submit{
+    width: 505px;
+    height:35px;
+    background-color: yellow;
+    border-radius: 10px;
+}
 .logo {
     display: flex;
     flex-direction: row;
@@ -17,20 +55,46 @@
     display: flex;
     flex-direction: row;
     border-style:solid;
+    border-color: white;
     justify-content: space-around;
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 50px;
+    border-radius:25px;
+
 }
-.buscador {
+#buscador {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     font-weight:bold;
 }
 
+body {
+    padding: 0,0,0,0;
+    margin: 0;
+}
 .padre-listados{
     display: flex;
     flex-direction: row;
     justify-content:space-around;
     align-items: center;
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    background-image:url(../img/fondo-listados.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
 }
 
+.section-listados {
+    border-style:outset;
+    border-color: black;
+    border-width: 20px;
+    padding: 20px;
+    border-radius: 25px;
 
+}
