@@ -8,6 +8,7 @@ header{
     border-style: solid;
     border-color: white;
 }
+
 .padre-buscador {
     display: flex;
     width: 500px;
