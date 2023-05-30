@@ -8,6 +8,25 @@ header{
     border-style: solid;
     border-color: white;
 }
+.nombreArtista {
+    color: white;
+    text-decoration: none;
+    font-size: small;
+}
+.tituloAlbum{
+    font-size: small;
+    color: white;
+
+}
+.nombreTrack {
+    font-size: small;
+    color: white;
+
+}
+
+.listados {
+    list-style-type: none;
+}
 
 .padre-buscador {
     display: flex;
@@ -80,7 +99,7 @@ body {
 .padre-listados{
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items: center;
     font-size: 40px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
