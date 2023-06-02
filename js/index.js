@@ -1,5 +1,5 @@
 let buscador = document.querySelector("#buscador")
-let formulario = document.querySelector("#form")
+let formulario = document.querySelector("#contenedor-form")
 
 formulario.addEventListener('submit', function(e) {;
  let terminoBuscador = buscador.value.trim();
