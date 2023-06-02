@@ -127,5 +127,27 @@ body {
     border-width: 20px;
     padding: 20px;
     border-radius: 25px;
+}
+#imagen-arriba{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nombre-generos{
+    text-decoration: none;
+    color: white;
+    font-size: 50px;
+}
+#contenedor-generos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    background-color: black;
+    color: white;
 
+}
+.main-genero{
+    background-color: black;
+    
 }

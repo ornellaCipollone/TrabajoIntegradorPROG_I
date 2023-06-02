@@ -23,7 +23,7 @@ fetch ("https://api.allorigins.win/raw?url="+"https://api.deezer.com/chart/0/alb
     .then(function(data){
         console.log(data);
         let contenedor = document.querySelector(".albumes")
-        for (let i=0 ; i<6; i++ )
+        for (let i=0 ; i<5; i++ )
         contenedor.innerHTML += `<li class="listados"> <a href="./detail-album.html"><img src=${data.data[i].cover}><h4 class="tituloAlbum">${data.data[i].title}</h4></a></li>`
         
 
@@ -39,7 +39,7 @@ fetch ("https://api.allorigins.win/raw?url="+"https://api.deezer.com/chart/0/alb
         .then(function(data){   
          console.log(data);
          let contenedorArtista = document.querySelector(".artistas")
-         for (let i=0 ; i<6; i++ )
+         for (let i=0 ; i<5; i++ )
         contenedorArtista.innerHTML += `<li class="listados"> <a href="./detail-artist.html"><img src=${data.data[i].picture}><h4 class="nombreArtista">${data.data[i].name}</h4></a></li>`
         })
         .catch (function(error){
@@ -53,7 +53,7 @@ fetch ("https://api.allorigins.win/raw?url="+"https://api.deezer.com/chart/0/alb
         .then(function(data){   
          console.log(data)
          let contenedorTrack = document.querySelector(".canciones")
-         for (let i=0 ; i<6; i++ )
+         for (let i=0 ; i<5; i++ )
         contenedorTrack.innerHTML += `<li class="listados"> <a href="./detail-track.html"><img src=${data.tracks.data[i].album.cover}></a><h4 class="nombreTrack" ><a href="./detail-artist"></a>${data.tracks.data[i].title}</h4>
         <h5 class="nombreArtista">${data.tracks.data[i].artist.name}</h5>
         </li>`
