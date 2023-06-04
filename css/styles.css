@@ -7,7 +7,7 @@ header {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-image: url(../img/fondo-header.jpg);
     background-attachment: fixed;
@@ -16,7 +16,7 @@ header {
     height: 400px;
     width: 100%;
     padding: 10px;
-    }
+}
 
 .contenedor-logo {
     display: flex;
@@ -80,74 +80,133 @@ header {
 /* FIN HEADER */
 
 
+
+/*CUERPO Y LISTADOS DEL INDEX Y GÉNEROS*/
 body {
-    padding: 0, 0, 0, 0;
-    margin: 0;
-}
-
-.listados {
-    list-style-type: none;
-}
-
-.nombreArtista {
-    color: white;
-    text-decoration: none;
-    font-size: small;
-}
-
-.tituloAlbum {
-    font-size: small;
-    color: white;
-
-}
-
-.nombreTrack {
-    font-size: small;
-    color: white;
-
+    padding: 0px;
+    margin: 0px;
+    background-color: #18171c;
 }
 
 .padre-listados {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    font-size: 40px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
-    background-image: url(../img/fondo-listados.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
+    width: 100%;
 }
 
 .section-listados {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border-style: outset;
     border-color: black;
     border-width: 20px;
-    padding: 20px;
     border-radius: 25px;
+    padding: 20px;
+    margin: 20px;
+    width: 95%;
 }
-#imagen-arriba{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.nombre-generos{
-    text-decoration: none;
-    color: white;
-    font-size: 50px;
-}
-#contenedor-generos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    list-style-type: none;
-    background-color: black;
-    color: white;
 
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
 }
-.main-genero{
-    background-color: black;
-    
+
+.listados {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 250px;
+    margin: 5px;
+    padding: 10px;
 }
+
+.titulo-listados {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    margin: 10px 0px 25px 0px;
+}
+
+.img-listados{
+    width: 180px;
+}
+
+.nombreTrack {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    margin: 10px;
+}
+
+.nombreArtista {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+    margin: 10px;
+}
+
+.tituloAlbum {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    margin: 10px;
+}
+
+.nombreGenres {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    margin: 10px;
+}
+/*FIN CUERPO Y LISTADOS DEL INDEX Y GÉNEROS*/
+
+
+
+/*FOOTER*/
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/fondo-header.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    margin: none;
+    height: 150px;
+    width: 100%;
+    padding: 10px;
+}
+
+.integrantes {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    margin: 10px;
+}
+
+.copyright {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    color: white;
+    margin: 5px;
+}
+/*FIN FOOTER*/

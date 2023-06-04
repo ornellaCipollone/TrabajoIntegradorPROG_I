@@ -3,7 +3,7 @@ let buscador = document.querySelector("#buscador")
 let formulario = document.querySelector("#contenedor-form")
 
 formulario.addEventListener('submit', function (e) {
-    ;
+    
     let terminoBuscador = buscador.value.trim();
 
     if (terminoBuscador === "") {
@@ -16,7 +16,7 @@ formulario.addEventListener('submit', function (e) {
         alert("debe tener mas de 3 caracteres")
         return
     }
-});
+})
 
 
 // LISTA CANCIONES
@@ -30,7 +30,7 @@ fetch("https://api.allorigins.win/raw?url=" + "https://api.deezer.com/chart")
         for (let i = 0; i < 5; i++)
             contenedorTrack.innerHTML += 
             `<li class="listados"> 
-                <img src="${data.tracks.data[i].album.cover}">   
+                <img class="img-listados" src="${data.tracks.data[i].album.cover}">   
                 <a href="./detail-track.html">
                     <h4 class="nombreTrack">${data.tracks.data[i].title}</h4>
                 </a>    
@@ -55,7 +55,7 @@ fetch("https://api.allorigins.win/raw?url=" + "https://api.deezer.com/chart/0/al
         for (let i = 0; i < 5; i++)
             contenedor.innerHTML += 
             `<li class="listados"> 
-                <img src="${data.data[i].cover}">
+                <img class="img-listados" src="${data.data[i].cover}">
                 <a href="./detail-album.html"> 
                     <h4 class="tituloAlbum">"${data.data[i].title}"</h4> 
                 </a>
@@ -77,7 +77,7 @@ fetch("https://api.allorigins.win/raw?url=" + "https://api.deezer.com/chart/0/ar
         for (let i = 0; i < 5; i++)
             contenedorArtista.innerHTML +=
                 `<li class="listados">
-                    <img src="${data.data[i].picture}">
+                    <img class="img-listados" src="${data.data[i].picture}">
                     <a href= "./detail-artist.html">
                         <h4 class="nombreArtista"> "${data.data[i].name}"</h4>
                     </a>
