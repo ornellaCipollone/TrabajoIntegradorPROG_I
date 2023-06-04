@@ -210,3 +210,20 @@ footer {
     margin: 5px;
 }
 /*FIN FOOTER*/
+
+/*detail de generos */
+.padre-generos{
+    display: flex;
+
+}
+
+.padre-detail-album{
+    display: flex;
+    flex-direction: column;
+}
+
+.canciones-detail-album{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

@@ -29,7 +29,7 @@ fetch("https://api.allorigins.win/raw?url="+"https://api.deezer.com/genre")
         contenedor.innerHTML += 
         `<li class="listados"> 
                 <img class="img-listados" src="${data.data[i].picture_medium}">
-                <a href="./detail-genres.html"> 
+                <a href="./detail-genres.html?id=${data.data[i].id}"> 
                     <h4 class="nombreGenres">"${data.data[i].name}"</h4> 
                 </a>
             </li>`

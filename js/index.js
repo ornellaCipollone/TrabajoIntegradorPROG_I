@@ -34,7 +34,7 @@ fetch("https://api.allorigins.win/raw?url=" + "https://api.deezer.com/chart")
                 <a href="./detail-track.html">
                     <h4 class="nombreTrack">${data.tracks.data[i].title}</h4>
                 </a>    
-                <a href="./detail-artist.html">
+                <a href="./detail-artist.html?id=${data.tracks.data[i].artist.id}">
                     <h5 class="nombreArtista">${data.tracks.data[i].artist.name}</h5>
                 </a>    
             </li>`
@@ -78,7 +78,7 @@ fetch("https://api.allorigins.win/raw?url=" + "https://api.deezer.com/chart/0/ar
             contenedorArtista.innerHTML +=
                 `<li class="listados">
                     <img class="img-listados" src="${data.data[i].picture}">
-                    <a href= "./detail-artist.html">
+                    <a href= "./detail-artist.html?id=${data.data[i].id}">
                         <h4 class="nombreArtista"> "${data.data[i].name}"</h4>
                     </a>
                 </li>`
