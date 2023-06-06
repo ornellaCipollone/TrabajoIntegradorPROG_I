@@ -227,3 +227,10 @@ footer {
     flex-direction: row;
     justify-content: space-around;
 }
+
+/*search results */
+.search-results-final{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
