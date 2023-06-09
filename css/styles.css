@@ -217,18 +217,38 @@ footer {
 
 
 /*DETAIL GENRES*/
-.padre-generos{
+.padre-detail-genre{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.contenedor-padre-listados{
+    width: 60%;
+}
+
+.detail-genero{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 40%;
+}
+
+.img-detailgenre{
+    width: 95%;
+    padding: 1% 1% 2% 1%;
 }
 
 .padre-detail-album{
     display: flex;
     flex-direction: column;
 }
+/*FIN DETAIL GENRES*/
 
 .canciones-detail-album{
     display: flex;
