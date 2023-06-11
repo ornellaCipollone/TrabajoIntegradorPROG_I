@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;  
+}
+
+h4{
+    width: 100%;  
+    height: auto;
+}
+
 /* HEADER */
 header {
     display: flex;
@@ -121,7 +130,7 @@ ul {
     flex-direction: row;
     list-style-type: none;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin: 0px;
     padding: 0px;
     width: 100%;
@@ -131,7 +140,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-decoration: none;
     width: 20%;
@@ -156,7 +165,7 @@ ul {
     font-size: 15px;
     color: white;
     margin: 10% 0%;
-}
+    }
 
 .nombreArtista {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -227,6 +236,11 @@ footer {
 }
 
 .contenedor-padre-listados{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 60%;
 }
 
@@ -243,18 +257,82 @@ footer {
     width: 95%;
     padding: 1% 1% 2% 1%;
 }
-
-.padre-detail-album{
-    display: flex;
-    flex-direction: column;
-}
 /*FIN DETAIL GENRES*/
 
-.canciones-detail-album{
+
+/*DETAIL ARTIST*/
+.padre-detail-artist{
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.detail-artist{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.img-detailartist{
+    width: 95%;
+    padding: 1% 1% 2% 1%;
+}
+/*FIN DETAIL ARTIST*/
+
+
+/*DETAIL ALBUM*/
+.padre-detail-album{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.detail-album{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.img-detailalbum{
+    width: 95%;
+    padding: 1% 1% 2% 1%;
+}
+
+.info-album{
+    display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
 }
+
+.contenido-info-album{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+    font-size: 15px;
+    color: white;
+    margin: 2.5% 0.5%;
+}
+
+.canciones-detail-album{
+    font-weight: lighter;
+}  
+/*FIN DETAIL ALBUM*/
+
 
 
 /*search results */
