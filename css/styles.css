@@ -10,7 +10,7 @@
 }
 .light-mode{
     background-color: white;
-    color:dark;
+    color: black;
 }
 
 a{
@@ -23,27 +23,37 @@ h4{
 }
 
 /* HEADER */
-header {
+header{
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     background-image: url(../img/fondo-header.jpg);
     background-attachment: fixed;
     background-size: cover;
-    margin: none;
-    height: 50vh;
+    margin: 0%;
     width: 100vw;
-    padding: 2vh;
+    height: 50vh;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.contenedor-logo {
+.main-header {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    background-image: url(../img/fondo-header.jpg);
+    background-attachment: fixed;
+    background-size: cover;
     justify-content: space-around;
     align-items: center;
+    width: 95%;
+    align-self: flex-end;
+}
+
+#light-mode{
+    margin-right: 0.5%;
+    margin-left: auto;
+    margin-top: 0.5%;
 }
 
 .logo {
@@ -90,7 +100,6 @@ header {
 
 .items-navegacion {
     text-decoration: none;
-    color: white;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 30px;
@@ -172,14 +181,12 @@ ul {
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 15px;
-    color: white;
     margin: 10% 0%;
     }
 
 .nombreArtista {
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
-    color: white;
     font-size: 15px;
     margin: 10% 0%;
 }
@@ -188,7 +195,6 @@ ul {
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 15px;
-    color: white;
     margin: 10% 0%;
 }
 
@@ -196,7 +202,6 @@ ul {
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 15px;
-    color: white;
     margin: 10% 0%;
 }
 /*FIN CUERPO Y LISTADOS*/
@@ -220,7 +225,6 @@ footer {
 
 .integrantes {
     font-family: 'Quicksand', sans-serif;
-    color: white;
     margin: 10px;
 }
 
@@ -228,7 +232,6 @@ footer {
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 15px;
-    color: white;
     margin: 5px;
 }
 /*FIN FOOTER*/
@@ -333,7 +336,6 @@ footer {
     font-family: 'Quicksand', sans-serif;
     font-weight: lighter;
     font-size: 15px;
-    color: white;
     margin: 2.5% 0.5%;
 }
 
@@ -394,7 +396,6 @@ footer {
     font-family: 'Quicksand', sans-serif;
     font-weight: lighter;
     font-size: 15px;
-    color: white;
 }
 /*FIN DETAIL TRACK*/
 
