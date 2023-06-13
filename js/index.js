@@ -1,14 +1,14 @@
 // BOTÓN DARK Y LIGHT MODE
 const contenedorLight = document.querySelector("main");
 const modoBoton = document.querySelector("#light-mode");
+let modoActual = localStorage.getItem('modo'); // AL CARGAR LA PÁGINA, SE PONE EL MODO GUARDADO LA ÚLTIMA VEZ QUE SE INGRESÓ 
 
 function aplicarModo(modo) {
-  contenedorLight.classList.remove('dark-mode', 'light-mode');
-  contenedorLight.classList.add(modo);
-  localStorage.setItem('modo', modo);
+    contenedorLight.classList.toggle('dark-mode', modo === 'dark-mode');
+    contenedorLight.classList.toggle('light-mode', modo === 'light-mode');
+    localStorage.setItem('modo', modo);
 }
 
-let modoActual = localStorage.getItem('modo'); // AL CARGAR LA PÁGINA, SE PONE EL MODO GUARDADO LA ÚLTIMA VEZ QUE SE INGRESÓ 
 if (modoActual === 'dark') {
   aplicarModo('dark-mode');
 } else if (modoActual === 'light') {

@@ -1,41 +1,50 @@
+// BOTÓN DARK Y LIGHT MODE
+const contenedorLight = document.querySelector("main");
+const modoBoton = document.querySelector("#light-mode");
+
+function aplicarModo(modo) {
+    contenedorLight.classList.toggle('dark-mode', modo === 'dark-mode');
+    contenedorLight.classList.toggle('light-mode', modo === 'light-mode');
+    localStorage.setItem('modo', modo);
+}
+
+let modoActual = localStorage.getItem('modo'); // AL CARGAR LA PÁGINA, SE PONE EL MODO GUARDADO LA ÚLTIMA VEZ QUE SE INGRESÓ 
+if (modoActual === 'dark') {
+  aplicarModo('dark-mode');
+} else if (modoActual === 'light') {
+  aplicarModo('light-mode');
+}
+
+modoBoton.addEventListener('click', function () { // CADA VEZ QUE TOCO EL BOTON SE CAMBIA EL MODO
+  if (contenedorLight.classList.contains('dark-mode')) {
+    aplicarModo('light-mode');
+  } else {
+    aplicarModo('dark-mode');
+  }
+});
+
+
+// BUSCADOR
 let buscador = document.querySelector("#buscador")
 let formulario = document.querySelector("#contenedor-form")
 
-formulario.addEventListener('submit', function(e) {;
+formulario.addEventListener('submit', function (e) {
+    
     let terminoBuscador = buscador.value.trim();
 
-if (terminoBuscador === "") {
-    e.preventDefault()
-    alert("ingrese texto")
-    return
-}
-if (terminoBuscador.length < 3) {
-    e.preventDefault()
-    alert("debe tener mas de 3 caracteres")
-    return
-}
-});
-
-let contenedorLight = document.querySelector("main")
-let modoBoton = document.querySelector("#light-mode")
-let guardado = localStorage.getItem('modo')
-if (guardado == 'dark'){
-    contenedorLight.classList.add('dark-mode')
-}
-if (guardado == 'light'){
-    contenedorLight.classList.add('light-mode')
-}
-modoBoton.addEventListener('click',function(){
-    contenedorLight.classList.toggle('dark-mode')
-    contenedorLight.classList.toggle('light-mode')
-    if (contenedorLight.classList.contains('dark-mode')){
-        localStorage.setItem('modo','dark')
+    if (terminoBuscador === "") {
+        e.preventDefault()
+        alert("No puede dejar el campo vacío")
+        return
     }
-    else{
-        localStorage.setItem('modo','light')  
+    if (terminoBuscador.length < 3) {
+        e.preventDefault()
+        alert("Su búsqueda debe tener más de 3 caracteres")
+        return
     }
-
 })
+
+
 let qs =location.search
 let qsObject = new URLSearchParams(qs)
 let buscar = qsObject.get("buscador")
