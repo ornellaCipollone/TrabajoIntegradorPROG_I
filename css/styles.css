@@ -8,6 +8,7 @@
     background-color:#18171c ;
     color:white;
 }
+
 .light-mode{
     background-color: white;
     color: black;
@@ -37,7 +38,7 @@ header{
     align-items: center;
 }
 
-.main-header {
+.principal-header {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -46,7 +47,7 @@ header{
     background-size: cover;
     justify-content: space-around;
     align-items: center;
-    width: 95%;
+    width: 100%;
     align-self: flex-end;
 }
 
