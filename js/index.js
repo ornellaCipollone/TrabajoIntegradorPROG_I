@@ -41,7 +41,7 @@ formulario.addEventListener('submit', function (e) {
 
 
 // LISTA CANCIONES
-fetch("https://api.allorigins.win/raw?url=" + "https://api.deezer.com/chart")
+fetch("https://cors-anywhere.herokuapp.com/" + "https://api.deezer.com/chart")
     .then(function (response) {
         return response.json()
     })
@@ -66,7 +66,7 @@ fetch("https://api.allorigins.win/raw?url=" + "https://api.deezer.com/chart")
 
     
 // LISTA ÁLBUMES
-fetch("https://api.allorigins.win/raw?url=" + "https://api.deezer.com/chart/0/albums")
+fetch("https://cors-anywhere.herokuapp.com/" + "https://api.deezer.com/chart/0/albums")
     .then(function (response) {
         return response.json()
     })

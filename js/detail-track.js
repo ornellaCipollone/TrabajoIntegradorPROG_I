@@ -28,7 +28,7 @@ let contenedor = document.querySelector(".detail-track")
 let contenedor2 = document.querySelector(".info-track")
 
 
-fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/track/" + id)
+fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/" + id)
     .then(function (response) {
         return response.json()
     })
@@ -39,11 +39,11 @@ fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/track/" + id)
             <img class="img-detailtrack" src="${data.album.cover_medium}"/> `            
         
         contenedor2.innerHTML += 
-            `<a href="detail-artist?id=${data.artist.id}">
+            `<a href="./detail-artist.html?id=${data.artist.id}">
                 <h4 class="contenido-info-track">Artista: ${data.artist.name}</h4>
             </a>
                
-            <a href="detail-album?id=${data.album.id}">
+            <a href="detail-album.html?id=${data.album.id}">
                 <h4 class="contenido-info-track">Álbum al que pertenece: ${data.album.title}</h4>
             </a>
             
@@ -52,31 +52,7 @@ fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/track/" + id)
             </div>`
 
 
-        let favoritos = [];
-        let recupero = localStorage.getItem('favoritos');
-        if (recupero != null) {
-            favoritos = JSON.parse(recupero)
-        }
-
-
-        let botonFav = document.querySelector(".fav")
-        botonFav.addEventListener('click', function (e) {
-            console.log("najd")
-            if (favoritos.includes(id)) {
-                let indice = favoritos.indexOf(id)
-                console.log(indice)
-                favoritos.splice(indice, 1)
-                botonFav.innerText = "Agregar a playlist"
-            }
-            else {
-                botonFav.innerText = "Quitar de playlist"
-                favoritos.push(id)
-                console.log(favoritos)
-            }
-            let arrayTostring = JSON.stringify(favoritos);
-            localStorage.setItem('favoritos', arrayTostring)
-            console.log(favoritos)
-        })
+        
 
 
     })
@@ -84,7 +60,35 @@ fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/track/" + id)
         console.log("el error es:" + error)
     })
 
+    let favoritos = []
+    let recupero = localStorage.getItem('favoritos');
+    if (recupero != null) {
+        favoritos = JSON.parse(recupero);
+    }
+    let botonFav = document.querySelector("#fav")
+    if (favoritos.includes(id)){
+        botonFav.innerText = "Quitar de playlist"
+    }
 
+
+    
+    botonFav.addEventListener('click', function (e) {
+        console.log(favoritos)
+        if (favoritos.includes(id)) {
+            let indice = favoritos.indexOf(id)
+            console.log(indice)
+            favoritos.splice(indice, 1)
+            botonFav.innerText = "Agregar a playlist"
+        }
+        else {
+            favoritos.push(id)
+            botonFav.innerText = "Quitar de playlist"
+            console.log(favoritos)
+        }
+        let arrayTostring = JSON.stringify(favoritos);
+        localStorage.setItem('favoritos', arrayTostring)
+        console.log(favoritos)
+    })
 
 
 

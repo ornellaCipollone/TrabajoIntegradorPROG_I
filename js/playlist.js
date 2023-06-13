@@ -16,19 +16,32 @@ if (terminoBuscador.length < 3) {
 }
 });
 
+let favoritos = []
 let recupero = localStorage.getItem('favoritos')
 if (recupero != null){
-let favoritos = JSON.parse(recupero)
+favoritos = JSON.parse(recupero)
 }
 console.log(favoritos)
+let contenedor = document.querySelector(".resultados-favoritos")
+for (i=0; i < favoritos.length; i++) {
+    let id = favoritos[i]
+    let url ="https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/" + id
+    console.log(id)
 
-for (i=0; i <= favoritos.length; i++) {
-    fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/track/?id=" + favoritos[i])
-    .then(function(repsponse){
-        return repsponse.json
+    fetch(url)
+    
+    .then(function(response){
+        let respuesta = response.json()
+        return respuesta
     })
     .then(function(data){
         console.log(data)
+        contenedor.innerHTML += `<article> 
+        <img src="${data.album.cover_medium}" >
+        <a href= "detail-track.html?id=${data.id}"><h2>${data.title}</h2></a>
+        </article>`
+
+
     })
     .catch(function(error){
         console.log(error)

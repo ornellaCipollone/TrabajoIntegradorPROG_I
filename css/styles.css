@@ -10,7 +10,7 @@
 }
 .light-mode{
     background-color: white;
-    color:dark;
+    color:black;
 }
 a{
     text-decoration: none;  
@@ -171,14 +171,12 @@ ul {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 15px;
-    color: white;
     margin: 10% 0%;
     }
 
 .nombreArtista {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
-    color: white;
     font-size: 15px;
     margin: 10% 0%;
 }
@@ -187,15 +185,14 @@ ul {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 15px;
-    color: white;
     margin: 10% 0%;
+    text-decoration: none;
 }
 
 .nombreGenres {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     font-size: 15px;
-    color: white;
     margin: 10% 0%;
 }
 /*FIN CUERPO Y LISTADOS*/
