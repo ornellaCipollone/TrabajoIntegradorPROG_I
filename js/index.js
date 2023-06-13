@@ -1,4 +1,3 @@
-// BOTÓN DARK Y LIGHT MODE
 let contenedorLight = document.querySelector("main")
 let modoBoton = document.querySelector("#light-mode")
 let guardado = localStorage.getItem('modo')

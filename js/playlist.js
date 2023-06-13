@@ -62,9 +62,9 @@ for (i=0; i < favoritos.length; i++) {
     })
     .then(function(data){
         console.log(data)
-        contenedor.innerHTML += `<article> 
+        contenedor.innerHTML += `<article class="article-playlist"> 
         <img src="${data.album.cover_medium}" >
-        <a href= "detail-track.html?id=${data.id}"><h2>${data.title}</h2></a>
+        <a class="link-id" href= "detail-track.html?id=${data.id}"><h2>${data.title}</h2></a>
         </article>`
 
 

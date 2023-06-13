@@ -1,27 +1,23 @@
-// BOTÓN DARK Y LIGHT MODE
-const contenedorLight = document.querySelector("main");
-const modoBoton = document.querySelector("#light-mode");
-
-function aplicarModo(modo) {
-    contenedorLight.classList.toggle('dark-mode', modo === 'dark-mode');
-    contenedorLight.classList.toggle('light-mode', modo === 'light-mode');
-    localStorage.setItem('modo', modo);
+let contenedorLight = document.querySelector("main")
+let modoBoton = document.querySelector("#light-mode")
+let guardado = localStorage.getItem('modo')
+if (guardado == 'dark'){
+    contenedorLight.classList.add('dark-mode')
 }
-
-let modoActual = localStorage.getItem('modo'); // AL CARGAR LA PÁGINA, SE PONE EL MODO GUARDADO LA ÚLTIMA VEZ QUE SE INGRESÓ 
-if (modoActual === 'dark') {
-  aplicarModo('dark-mode');
-} else if (modoActual === 'light') {
-  aplicarModo('light-mode');
+if (guardado == 'light'){
+    contenedorLight.classList.add('light-mode')
 }
+modoBoton.addEventListener('click',function(){
+    contenedorLight.classList.toggle('dark-mode')
+    contenedorLight.classList.toggle('light-mode')
+    if (contenedorLight.classList.contains('dark-mode')){
+        localStorage.setItem('modo','dark')
+    }
+    else{
+        localStorage.setItem('modo','light')  
+    }
 
-modoBoton.addEventListener('click', function () { // CADA VEZ QUE TOCO EL BOTON SE CAMBIA EL MODO
-  if (contenedorLight.classList.contains('dark-mode')) {
-    aplicarModo('light-mode');
-  } else {
-    aplicarModo('dark-mode');
-  }
-});
+})
 
 
 // BUSCADOR
@@ -62,8 +58,8 @@ fetch(endpoint)
         contenedor.innerHTML = `<h3>No hay resultados para su busqueda</h3>`
     }
     else {
-        contenedor.innerHTML = `<h1>Resultados de busqueda para: </h1>`
-        for (let i=0; i<10; i++){
+        contenedor.innerHTML = `<h1>Resultados de busqueda para: ${buscar} </h1>`
+        for (let i=0; i<data.data.length; i++){
             contenedor.innerHTML += `<article class="cancion-buscada">
                 <img src="${data.data[i].album.cover_medium}">
                 <a href="detail-track.html?id=${data.data[i].id}"><h2>${data.data[i].title}</h2></a>
