@@ -1,27 +1,24 @@
 // BOTÓN DARK Y LIGHT MODE
-const contenedorLight = document.querySelector("main");
-const modoBoton = document.querySelector("#light-mode");
-
-function aplicarModo(modo) {
-  contenedorLight.classList.remove('dark-mode', 'light-mode');
-  contenedorLight.classList.add(modo);
-  localStorage.setItem('modo', modo);
+let contenedorLight = document.querySelector("main")
+let modoBoton = document.querySelector("#light-mode")
+let guardado = localStorage.getItem('modo')
+if (guardado == 'dark'){
+    contenedorLight.classList.add('dark-mode')
 }
-
-let modoActual = localStorage.getItem('modo'); // AL CARGAR LA PÁGINA, SE PONE EL MODO GUARDADO LA ÚLTIMA VEZ QUE SE INGRESÓ 
-if (modoActual === 'dark') {
-  aplicarModo('dark-mode');
-} else if (modoActual === 'light') {
-  aplicarModo('light-mode');
+if (guardado == 'light'){
+    contenedorLight.classList.add('light-mode')
 }
+modoBoton.addEventListener('click',function(){
+    contenedorLight.classList.toggle('dark-mode')
+    contenedorLight.classList.toggle('light-mode')
+    if (contenedorLight.classList.contains('dark-mode')){
+        localStorage.setItem('modo','dark')
+    }
+    else{
+        localStorage.setItem('modo','light')  
+    }
 
-modoBoton.addEventListener('click', function () { // CADA VEZ QUE TOCO EL BOTON SE CAMBIA EL MODO
-  if (contenedorLight.classList.contains('dark-mode')) {
-    aplicarModo('light-mode');
-  } else {
-    aplicarModo('dark-mode');
-  }
-});
+})
 
 
 // BUSCADOR
