@@ -12,6 +12,7 @@
     background-color: white;
     color:dark;
 }
+
 a{
     text-decoration: none;  
 }
@@ -90,7 +91,7 @@ header {
 .items-navegacion {
     text-decoration: none;
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 30px;
     padding: 0px;
@@ -157,7 +158,7 @@ ul {
 }
 
 .titulo-listados {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 60px;
     margin: 1.8% 0%;
@@ -168,7 +169,7 @@ ul {
 }
 
 .nombreTrack {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 15px;
     color: white;
@@ -176,7 +177,7 @@ ul {
     }
 
 .nombreArtista {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     color: white;
     font-size: 15px;
@@ -184,7 +185,7 @@ ul {
 }
 
 .tituloAlbum {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 15px;
     color: white;
@@ -192,7 +193,7 @@ ul {
 }
 
 .nombreGenres {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 15px;
     color: white;
@@ -218,13 +219,13 @@ footer {
 }
 
 .integrantes {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     color: white;
     margin: 10px;
 }
 
 .copyright {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 15px;
     color: white;
@@ -329,7 +330,7 @@ footer {
 }
 
 .contenido-info-album{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: lighter;
     font-size: 15px;
     color: white;
@@ -390,7 +391,7 @@ footer {
 }
 
 .contenido-info-track{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-weight: lighter;
     font-size: 15px;
     color: white;
