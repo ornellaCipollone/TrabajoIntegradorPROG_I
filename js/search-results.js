@@ -15,6 +15,7 @@ if (terminoBuscador.length < 3) {
     return
 }
 });
+
 let contenedorLight = document.querySelector("main")
 let modoBoton = document.querySelector("#light-mode")
 let guardado = localStorage.getItem('modo')

@@ -106,6 +106,7 @@ header{
     font-size: 30px;
     padding: 0px;
     margin: 0px;
+    color: white;
 }
 /* FIN HEADER */
 
@@ -228,6 +229,7 @@ footer {
 .integrantes {
     font-family: 'Quicksand', sans-serif;
     margin: 10px;
+    color: white;
 }
 
 .copyright {
@@ -235,6 +237,7 @@ footer {
     font-weight: bold;
     font-size: 15px;
     margin: 5px;
+    color: white;
 }
 /*FIN FOOTER*/
 

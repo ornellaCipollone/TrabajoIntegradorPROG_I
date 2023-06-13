@@ -1,21 +1,49 @@
+// BOTÓN DARK Y LIGHT MODE
+const contenedorLight = document.querySelector("main");
+const modoBoton = document.querySelector("#light-mode");
+
+function aplicarModo(modo) {
+  contenedorLight.classList.remove('dark-mode', 'light-mode');
+  contenedorLight.classList.add(modo);
+  localStorage.setItem('modo', modo);
+}
+
+let modoActual = localStorage.getItem('modo'); // AL CARGAR LA PÁGINA, SE PONE EL MODO GUARDADO LA ÚLTIMA VEZ QUE SE INGRESÓ 
+if (modoActual === 'dark') {
+  aplicarModo('dark-mode');
+} else if (modoActual === 'light') {
+  aplicarModo('light-mode');
+}
+
+modoBoton.addEventListener('click', function () { // CADA VEZ QUE TOCO EL BOTON SE CAMBIA EL MODO
+  if (contenedorLight.classList.contains('dark-mode')) {
+    aplicarModo('light-mode');
+  } else {
+    aplicarModo('dark-mode');
+  }
+});
+
+
+// BUSCADOR
 let buscador = document.querySelector("#buscador")
 let formulario = document.querySelector("#contenedor-form")
 
 formulario.addEventListener('submit', function (e) {
-    ;
+    
     let terminoBuscador = buscador.value.trim();
 
     if (terminoBuscador === "") {
         e.preventDefault()
-        alert("ingrese texto")
+        alert("No puede dejar el campo vacío")
         return
     }
     if (terminoBuscador.length < 3) {
         e.preventDefault()
-        alert("debe tener mas de 3 caracteres")
+        alert("Su búsqueda debe tener más de 3 caracteres")
         return
     }
-});
+})
+
 
 // CAPTURANDO EL TRACK CUYO DETALLE QUIERE VISUALIZAR EL USUARIO
 let queryString = location.search;
@@ -50,11 +78,6 @@ fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/" + id)
             <div>
                 <h4 class="contenido-info-track">Fecha de lanzamiento: ${data.release_date}</h4>
             </div>`
-
-
-        
-
-
     })
     .catch(function (error) {
         console.log("el error es:" + error)
