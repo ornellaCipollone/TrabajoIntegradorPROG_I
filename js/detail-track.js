@@ -24,7 +24,9 @@ let id = queryObj.get("id")
 console.log(id)
 
 // CAPTURANDO LA SECCIÓN DONDE QUIERO AGREGAR EL CONTENIDO Y AGREGÁNDOLO
-let contenedor = document.querySelector(".padre-detail-track")
+let contenedor = document.querySelector(".detail-track")
+let contenedor2 = document.querySelector(".info-track")
+
 
 fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/track/" + id)
     .then(function (response) {
@@ -32,49 +34,55 @@ fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/track/" + id)
     })
     .then(function (data) {
         console.log(data)
-        contenedor.innerHTML = `<article>
-    <img src="${data.album.cover_medium}">
-    <h1>${data.title}</h1>
-    <a href=./detail-album?id=${data.album.id}><h2>${data.album.title}</h2></a>
-    <a href=./detail-artist?id=${data.artist.id}><h3>${data.artist.name}</h3></a>
-    </article>
+        contenedor.innerHTML += 
+            `<h1 class="titulo-listados">${data.title}</h1>
+            <img class="img-detailtrack" src="${data.album.cover_medium}"/> `            
+        
+        contenedor2.innerHTML += 
+            `<a href="detail-artist?id=${data.artist.id}">
+                <h4 class="contenido-info-track">Artista: ${data.artist.name}</h4>
+            </a>
+               
+            <a href="detail-album?id=${data.album.id}">
+                <h4 class="contenido-info-track">Álbum al que pertenece: ${data.album.title}</h4>
+            </a>
+            
+            <div>
+                <h4 class="contenido-info-track">Fecha de lanzamiento: ${data.release_date}</h4>
+            </div>`
 
-    <article>
-    <a href="playlist.html"><h2>Mi playlist</h2></a>
-    </article>  
 
-    `
-    let favoritos=[];
-    let recupero = localStorage.getItem('favoritos');
-    if (recupero != null){
-        favoritos= JSON.parse(recupero)
-    }
-    
-    
-    let botonFav= document.querySelector(".fav")
-    botonFav.addEventListener('click',function(e){
-        console.log("najd")
-        if (favoritos.includes(id)){
-            let indice = favoritos.indexOf(id)
-            console.log(indice)
-            favoritos.splice(indice,1)
-            botonFav.innerText = "Agregar a playlist"
+        let favoritos = [];
+        let recupero = localStorage.getItem('favoritos');
+        if (recupero != null) {
+            favoritos = JSON.parse(recupero)
         }
-        else {
-            botonFav.innerText="Quitar de playlist"
-            favoritos.push(id)
+
+
+        let botonFav = document.querySelector(".fav")
+        botonFav.addEventListener('click', function (e) {
+            console.log("najd")
+            if (favoritos.includes(id)) {
+                let indice = favoritos.indexOf(id)
+                console.log(indice)
+                favoritos.splice(indice, 1)
+                botonFav.innerText = "Agregar a playlist"
+            }
+            else {
+                botonFav.innerText = "Quitar de playlist"
+                favoritos.push(id)
+                console.log(favoritos)
+            }
+            let arrayTostring = JSON.stringify(favoritos);
+            localStorage.setItem('favoritos', arrayTostring)
             console.log(favoritos)
-        }
-        let arrayTostring = JSON.stringify(favoritos);
-        localStorage.setItem('favoritos',arrayTostring)
-        console.log(favoritos)
+        })
+
+
     })
-    
-    
-})
-.catch(function(error){
-    console.log("el error es:" + error)
-})
+    .catch(function (error) {
+        console.log("el error es:" + error)
+    })
 
 
 

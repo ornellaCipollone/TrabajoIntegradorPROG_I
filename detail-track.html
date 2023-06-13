@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +19,7 @@
             <input id="buscador" type="text" name="buscador" placeholder="Buscar...">
             <button id="submit" type="submit">Buscar</button>
         </form>
-        
+
         <nav class="nav-header">
             <ul class="menu-navegacion">
                 <li><a class="items-navegacion" href="genres.html">Géneros</a></li>
@@ -27,15 +28,28 @@
             </ul>
         </nav>
     </header>
-    
-    <section class="padre-detail-track">
 
-    </section>
-    
-    <div class="padre-fav">
-        <button class="fav">Agregar a playlist </button>
+    <main class="padre-detail-track">
+        <section class="detail-track">
+            <!-- ESTO SE COMPLETA CON LA API A TRAVÉS DE JS -->
+        </section>
 
-    </div>
+        <section class="padre-info-track">
+            <h1 class="titulo-listados">Detalles de la canción</h1>
+            <section class="info-track">
+                <!-- ESTO SE COMPLETA CON LA API A TRAVÉS DE JS -->
+            </section>
+            <div>
+                <a href="playlist.html">
+                    <h2 class="ir-playlist">Mi playlist</h2>
+                </a>
+            </div>
+            <div class="padre-fav">
+                <button class="fav">Agregar a playlist </button>
+            </div>
+        </section>
+    </main>
+
 
     <footer>
         <p class="integrantes">Integrantes: Cipollone Ornella, Lohrmann Ramiro</p>
@@ -44,6 +58,7 @@
         </div>
     </footer>
 
-<script type="text/javascript" src="js/detail-track.js"></script>
+    <script type="text/javascript" src="js/detail-track.js"></script>
 </body>
+
 </html>

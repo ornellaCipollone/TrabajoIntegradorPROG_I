@@ -31,7 +31,7 @@ fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/album/" + id)
             
           
         let canciones = document.querySelector(".canciones-detail-album")
-        for (let i = 0; i<data.tracks.data.length; i++) {
+        for (let i = 0; i<10; i++) {
             canciones.innerHTML += 
             `<li class="listados">
                 <img class="img-listados" src="${data.tracks.data[i].album.cover_medium}">
