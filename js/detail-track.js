@@ -1,34 +1,38 @@
-let queryString = location.search;
-let queryObj = new URLSearchParams(queryString)
-let id = queryObj.get("id") 
-console.log(id)
 let buscador = document.querySelector("#buscador")
 let formulario = document.querySelector("#contenedor-form")
 
-formulario.addEventListener('submit', function(e) {;
+formulario.addEventListener('submit', function (e) {
+    ;
     let terminoBuscador = buscador.value.trim();
 
-if (terminoBuscador === "") {
-    e.preventDefault()
-    alert("ingrese texto")
-    return
-}
-if (terminoBuscador.length < 3) {
-    e.preventDefault()
-    alert("debe tener mas de 3 caracteres")
-    return
-}
+    if (terminoBuscador === "") {
+        e.preventDefault()
+        alert("ingrese texto")
+        return
+    }
+    if (terminoBuscador.length < 3) {
+        e.preventDefault()
+        alert("debe tener mas de 3 caracteres")
+        return
+    }
 });
 
-fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/track/" + id)
-.then(function(response){
-    return response.json()
-})
-.then(function(data){
-    console.log(data)
-    let contenedor = document.querySelector(".padre-detail-track")
+// CAPTURANDO EL TRACK CUYO DETALLE QUIERE VISUALIZAR EL USUARIO
+let queryString = location.search;
+let queryObj = new URLSearchParams(queryString)
+let id = queryObj.get("id")
+console.log(id)
 
-    contenedor.innerHTML = `<article>
+// CAPTURANDO LA SECCIÓN DONDE QUIERO AGREGAR EL CONTENIDO Y AGREGÁNDOLO
+let contenedor = document.querySelector(".padre-detail-track")
+
+fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/track/" + id)
+    .then(function (response) {
+        return response.json()
+    })
+    .then(function (data) {
+        console.log(data)
+        contenedor.innerHTML = `<article>
     <img src="${data.album.cover_medium}">
     <h1>${data.title}</h1>
     <a href=./detail-album?id=${data.album.id}><h2>${data.album.title}</h2></a>
