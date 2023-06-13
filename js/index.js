@@ -1,3 +1,24 @@
+let contenedorLight = document.querySelector("main")
+let modoBoton = document.querySelector("#light-mode")
+let guardado = localStorage.getItem('modo')
+if (guardado == 'dark'){
+    contenedorLight.classList.add('dark-mode')
+}
+if (guardado == 'light'){
+    contenedorLight.classList.add('light-mode')
+}
+modoBoton.addEventListener('click',function(){
+    contenedorLight.classList.toggle('dark-mode')
+    contenedorLight.classList.toggle('light-mode')
+    if (contenedorLight.classList.contains('dark-mode')){
+        localStorage.setItem('modo','dark')
+    }
+    else{
+        localStorage.setItem('modo','light')  
+    }
+
+})
+
 // BUSCADOR
 let buscador = document.querySelector("#buscador")
 let formulario = document.querySelector("#contenedor-form")

@@ -17,7 +17,9 @@ if (terminoBuscador.length < 3) {
 });
 
 let recupero = localStorage.getItem('favoritos')
+if (recupero != null){
 let favoritos = JSON.parse(recupero)
+}
 console.log(favoritos)
 
 for (i=0; i <= favoritos.length; i++) {

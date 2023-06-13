@@ -36,41 +36,43 @@ fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/track/" + id)
     </article>
 
     <article>
-    <h1>Agregar a mi playlist</h1>
     <a href="playlist.html"><h2>Mi playlist</h2></a>
     </article>  
+
     `
+    let favoritos=[];
+    let recupero = localStorage.getItem('favoritos');
+    if (recupero != null){
+        favoritos= JSON.parse(recupero)
+    }
+    
+    
+    let botonFav= document.querySelector(".fav")
+    botonFav.addEventListener('click',function(e){
+        console.log("najd")
+        if (favoritos.includes(id)){
+            let indice = favoritos.indexOf(id)
+            console.log(indice)
+            favoritos.splice(indice,1)
+            botonFav.innerText = "Agregar a playlist"
+        }
+        else {
+            botonFav.innerText="Quitar de playlist"
+            favoritos.push(id)
+            console.log(favoritos)
+        }
+        let arrayTostring = JSON.stringify(favoritos);
+        localStorage.setItem('favoritos',arrayTostring)
+        console.log(favoritos)
+    })
+    
+    
 })
 .catch(function(error){
     console.log("el error es:" + error)
 })
-let favoritos=[]
-
-let recupero = localStorage.getItem('favoritos')
-let favs = JSON.parse(recupero)
-for (i=0; i < favs.length; i++){
-    favoritos.push(favs[i])
-}
-
-
-let botonFav= document.querySelector(".fav")
-botonFav.addEventListener('click',function(e){
-    if (favoritos.includes(id)){
-        let indice = favoritos.indexOf(id)
-        console.log(indice)
-        favoritos.splice(indice,1)
-        botonFav.innerText = "Agregar a playlist"
-    }
-    else {
-        botonFav.innerText="Quitar de playlist"
-        favoritos.push(id)
-    }
-    let stringify = JSON.stringify(favoritos)
-    localStorage.setItem('favoritos',favoritos)
-    console.log(favoritos)
-})
 
 
 
-console.log(favoritos)
+
 
