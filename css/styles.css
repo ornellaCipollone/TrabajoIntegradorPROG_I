@@ -128,6 +128,8 @@ body {
     margin: 0px;
     width: 100vw;
     background-color: #18171c;
+    color: white;
+    border-color: white;
 }
 
 .padre-listados {
@@ -442,6 +444,10 @@ footer {
 .img-search{
     width: 95%;
     padding: 1% 1% 2% 1%;
+}
+
+#ver-mas {
+    display: none;
 }
 /*FIN DE SEARCH RESULTS*/
 

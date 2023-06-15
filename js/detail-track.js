@@ -85,17 +85,18 @@ fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/" + id)
         console.log("el error es:" + error)
     })
 
+
+// BOTÓN DE "AGREGAR/QUITAR A PLAYLIST" Y SU FUNCIONALIDAD   
 let favoritos = []
 let recupero = localStorage.getItem('favoritos');
 if (recupero != null) {
     favoritos = JSON.parse(recupero);
 }
+
 let botonFav = document.querySelector("#fav")
 if (favoritos.includes(id)) {
     botonFav.innerText = "Quitar de playlist"
 }
-
-
 
 botonFav.addEventListener('click', function (e) {
     console.log(favoritos)
@@ -110,6 +111,7 @@ botonFav.addEventListener('click', function (e) {
         botonFav.innerText = "Quitar de playlist"
         console.log(favoritos)
     }
+
     let arrayTostring = JSON.stringify(favoritos);
     localStorage.setItem('favoritos', arrayTostring)
     console.log(favoritos)

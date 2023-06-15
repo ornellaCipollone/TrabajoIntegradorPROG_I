@@ -51,32 +51,62 @@ let endpoint = "https://api.allorigins.win/raw?url=https://api.deezer.com/search
 
 
 //CAPTURANDO LA SECCIÓN DONDE QUIERO AGREGAR EL CONTENIDO Y AGREGÁNDOLO
-let contenedor = document.querySelector(".search-results-final")
-let contenedor2 = document.querySelector(".titulo-busqueda")
+let contenedor = document.querySelector(".search-results-final");
+let contenedor2 = document.querySelector(".titulo-busqueda");
+let botonVerMas = document.querySelector("#ver-mas");
 
 fetch(endpoint)
     .then(function (response) {
-        return response.json()
+        return response.json();
     })
     .then(function (data) {
-        console.log(data)
+        console.log(data);
         if (data.data.length == 0) {
-            contenedor2.innerHTML = `<h3>No hay resultados para su búsqueda</h3>`
-        }
-        else {
-            contenedor2.innerHTML = `<h1>Resultados de búsqueda para: ${buscar}</h1>`
-            for (let i = 0; i < data.data.length; i++) {
+            contenedor2.innerHTML = `<h3>No hay resultados para su búsqueda</h3>`;
+        } else {
+            botonVerMas.style.display = "block";
+            contenedor2.innerHTML = `<h1>Resultados de búsqueda para: ${buscar}</h1>`;
+            for (let i = 0; i < 10; i++) {
                 contenedor.innerHTML +=
                     `<article class="cancion-buscada">
-                    <img class="img-search" src="${data.data[i].album.cover_medium}">
-                    <a href="detail-track.html?id=${data.data[i].id}">
-                        <h2>${data.data[i].title}</h2>
-                    </a>
-                </article>`
+                        <img class="img-search" src="${data.data[i].album.cover_medium}">
+                        <a href="detail-track.html?id=${data.data[i].id}">
+                            <h2>${data.data[i].title}</h2>
+                        </a>
+                    </article>`;
             }
+
+            let mostrarMas = false;
+            botonVerMas.addEventListener('click', function (e) {
+                mostrarMas = !mostrarMas;
+                if (mostrarMas) {
+                    botonVerMas.innerText = "Ver menos";
+                    contenedor.innerHTML = "";
+                    for (let i = 0; i < data.data.length; i++) {
+                        contenedor.innerHTML += 
+                            `<article class="cancion-buscada">
+                                <img class="img-search" src="${data.data[i].album.cover_medium}">
+                                <a href="detail-track.html?id=${data.data[i].id}">
+                                    <h2>${data.data[i].title}</h2>
+                                </a>
+                            </article>`;
+                    }
+                } else {
+                    botonVerMas.innerText = "Ver más";
+                    contenedor.innerHTML = "";
+                    for (let i = 0; i < 10; i++) {
+                        contenedor.innerHTML += 
+                            `<article class="cancion-buscada">
+                                <img class="img-search" src="${data.data[i].album.cover_medium}">
+                                <a href="detail-track.html?id=${data.data[i].id}">
+                                    <h2>${data.data[i].title}</h2>
+                                </a>
+                            </article>`;
+                    }
+                }
+            });
         }
     })
     .catch(function (error) {
-        console.log(error)
-    })
-
+        console.log(error);
+    });
