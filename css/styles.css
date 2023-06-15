@@ -5,36 +5,36 @@
 }
 
 .dark-mode {
-    background-color:#18171c ;
-    color:white;
+    background-color: #18171c;
+    color: white;
     border-color: white;
 }
 
 .light-mode {
     background-color: white;
-    color:black;
+    color: black;
     border-color: black;
 }
 
-.light-mode a{
-    color:black;  
+.light-mode a {
+    color: black;
 }
 
-.dark-mode a{
-    color:white;    
+.dark-mode a {
+    color: white;
 }
 
-a{
-    text-decoration: none;  
+a {
+    text-decoration: none;
 }
 
-h4{
-    width: 100%;  
+h4 {
+    width: 100%;
     height: auto;
 }
 
 /* HEADER */
-header{
+header {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -61,14 +61,15 @@ header{
     align-self: flex-end;
 }
 
-#light-mode{
+#light-mode {
+    width: 10%;
     margin-right: 0.5%;
     margin-left: auto;
     margin-top: 0.5%;
 }
 
 .logo {
-    height: 25vh;
+    height: 23vh;
 }
 
 #contenedor-form {
@@ -118,6 +119,7 @@ header{
     margin: 0px;
     color: white;
 }
+
 /* FIN HEADER */
 
 
@@ -127,9 +129,9 @@ body {
     padding: 0px;
     margin: 0px;
     width: 100vw;
-    background-color: #18171c;
     color: white;
     border-color: white;
+    background-color: #18171c;
 }
 
 .padre-listados {
@@ -147,8 +149,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-style:solid;
-    border-width: 20px;
+    border: solid 20px;
     border-radius: 25px;
     padding: 0px;
     margin: 1.8% 0%;
@@ -177,6 +178,7 @@ ul {
     width: 20%;
     margin: 1% 0%;
     padding: 0%;
+    font-size: 15px;
 }
 
 .titulo-listados {
@@ -186,28 +188,25 @@ ul {
     margin: 1.8% 0%;
 }
 
-.img-listados{
+.img-listados {
     width: 80%;
 }
 
 .nombreTrack {
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
-    font-size: 15px;
     margin: 10% 0%;
 }
 
 .nombreArtista {
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
-    font-size: 15px;
     margin: 10% 0%;
 }
 
 .tituloAlbum {
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
-    font-size: 15px;
     margin: 10% 0%;
     text-decoration: none;
 }
@@ -215,9 +214,9 @@ ul {
 .nombreGenres {
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
-    font-size: 15px;
     margin: 10% 0%;
 }
+
 /*FIN CUERPO Y LISTADOS*/
 
 
@@ -250,11 +249,12 @@ footer {
     margin: 5px;
     color: white;
 }
+
 /*FIN FOOTER*/
 
 
 /*DETAIL GENRES*/
-.padre-detail-genre{
+.padre-detail-genre {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -263,7 +263,7 @@ footer {
     width: 100%;
 }
 
-.contenedor-padre-listados{
+.contenedor-padre-listados {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -272,7 +272,7 @@ footer {
     width: 60%;
 }
 
-.detail-genero{
+.detail-genero {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -281,15 +281,16 @@ footer {
     width: 40%;
 }
 
-.img-detailgenre{
+.img-detailgenre {
     width: 95%;
     padding: 1% 1% 2% 1%;
 }
+
 /*FIN DETAIL GENRES*/
 
 
 /*DETAIL ARTIST*/
-.padre-detail-artist{
+.padre-detail-artist {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -298,7 +299,7 @@ footer {
     width: 100%;
 }
 
-.detail-artist{
+.detail-artist {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -307,15 +308,16 @@ footer {
     width: 40%;
 }
 
-.img-detailartist{
+.img-detailartist {
     width: 95%;
     padding: 1% 1% 2% 1%;
 }
+
 /*FIN DETAIL ARTIST*/
 
 
 /*DETAIL ALBUM*/
-.padre-detail-album{
+.padre-detail-album {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -324,7 +326,7 @@ footer {
     width: 100%;
 }
 
-.detail-album{
+.detail-album {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -333,12 +335,12 @@ footer {
     width: 40%;
 }
 
-.img-detailalbum{
+.img-detailalbum {
     width: 95%;
     padding: 1% 1% 2% 1%;
 }
 
-.info-album{
+.info-album {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -348,21 +350,22 @@ footer {
     width: 100%;
 }
 
-.contenido-info-album{
+.contenido-info-album {
     font-family: 'Quicksand', sans-serif;
     font-weight: lighter;
     font-size: 15px;
     margin: 2.5% 0.5%;
 }
 
-.canciones-detail-album{
+.canciones-detail-album {
     font-weight: lighter;
-}  
+}
+
 /*FIN DETAIL ALBUM*/
 
 
 /*DETAIL TRACK*/
-.padre-detail-track{
+.padre-detail-track {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -371,7 +374,7 @@ footer {
     width: 100%;
 }
 
-.detail-track{
+.detail-track {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -380,25 +383,25 @@ footer {
     width: 40%;
 }
 
-.img-detailtrack{
+.img-detailtrack {
     width: 95%;
     padding: 1% 1% 2% 1%;
 }
 
-.padre-info-track{
+.padre-info-track {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
     width: 60%;
-    border-style:solid;
+    border-style: solid;
     border-width: 20px;
     border-radius: 25px;
     padding: 2%;
 }
 
-.info-track{
+.info-track {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -407,16 +410,17 @@ footer {
     width: 100%;
 }
 
-.contenido-info-track{
+.contenido-info-track {
     font-family: 'Quicksand', sans-serif;
     font-weight: lighter;
     font-size: 15px;
 }
+
 /*FIN DETAIL TRACK*/
 
 
 /*SEARCH RESULTS*/
-.titulo-busqueda{
+.titulo-busqueda {
     padding: 1%;
 }
 
@@ -429,7 +433,7 @@ footer {
     width: 100%;
 }
 
-.cancion-buscada{
+.cancion-buscada {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -437,11 +441,11 @@ footer {
     padding: 10px;
     border-style: solid;
     border-radius: 10px;
-    margin: 1% 0%; 
+    margin: 1% 0%;
     width: 18%;
 }
 
-.img-search{
+.img-search {
     width: 95%;
     padding: 1% 1% 2% 1%;
 }
@@ -449,15 +453,16 @@ footer {
 #ver-mas {
     display: none;
 }
+
 /*FIN DE SEARCH RESULTS*/
 
 
 /*PLAYLIST*/
-.titulo-playlist{
+.titulo-playlist {
     padding: 1%;
 }
 
-.resultados-favoritos{
+.resultados-favoritos {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -466,7 +471,7 @@ footer {
     width: 100%;
 }
 
-.article-playlist{
+.article-playlist {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -474,17 +479,159 @@ footer {
     padding: 1%;
     border-style: solid;
     border-radius: 10px;
-    margin: 1% 0%; 
+    margin: 1% 0%;
     width: 18%;
 }
 
-.img-playlist{
+.img-playlist {
     width: 95%;
     padding: 1% 1% 2% 1%;
 }
 
-.link-id{
+.link-id {
     text-decoration: none;
 }
-/*PLAYLIST*/
 
+/*FIN PLAYLIST*/
+
+/*MOBILE*/
+@media (max-width: 420px) {
+    header {
+        height: 30vh;
+        width: 100%;
+    }
+
+    .logo {
+        height: 13vh;
+    }
+
+    .padre-listados {
+        width: 100%;
+    }
+
+    #contenedor-form {
+        margin: 1%;
+        padding: 0%;
+        height: 5vh;
+        width: 45%;
+    }
+
+    #buscador {
+        width: 75%;
+        font-size: xx-small;
+    }
+
+    #submit {
+        font-size: xx-small;
+        width: 25%;
+        height: 4vh;
+    }
+
+    .menu-navegacion {
+        height: 5vh;
+    }
+
+    .items-navegacion {
+        font-size: small;
+    }
+
+    #light-mode {
+        height: 3vh;
+        width: 30%;
+        font-size: xx-small;
+    }
+
+    .titulo-listados {
+        font-size: large;
+    }
+
+    .listados {
+        font-size: xx-small;
+        width: 20%;
+    }
+
+    .section-listados {
+        border: solid 7px;
+        width: 100%;
+    }
+
+    footer {
+        width: 100%;
+        height: 20vh;
+        font-size: small;
+    }
+
+    .copyright {
+        font-size: small;
+    }
+
+    .padre-detail-artist {
+        flex-direction: column;
+    }
+
+    .detail-artist {
+        width: 50%;
+    }
+
+    .padre-detail-genre {
+        flex-direction: column;
+    }
+
+    .detail-genre {
+        width: 50%;
+    }
+
+    .padre-detail-album {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-album {
+        flex-direction: column;
+        font-size: xx-small;
+        height: 15vh;
+    }
+
+    .detail-album {
+        width: 50%;
+        justify-content: center;
+    }
+
+    .contenedor-padre-listados {
+        width: 100%;
+    }
+
+    .listados {
+        width: 20%;
+    }
+
+    .padre-detail-track {
+        flex-direction: column;
+    }
+
+    .padre-info-track {
+        flex-direction: column;
+        border: solid 7px;
+        margin-top: 2vh;
+        width: 80%;
+        font-size: x-small;
+    }
+
+    .detail-track {
+        width: 50%;
+    }
+
+    audio {
+        margin-top: 1vh;
+        width: 100%;
+        height: 5vh;
+    }
+
+    .titulo-busqueda {
+        font-size: xx-small;
+    }
+
+    .nombre-cancion-buscada {
+        font-size: x-small;
+    }
+}

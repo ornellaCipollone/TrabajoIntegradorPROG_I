@@ -64,9 +64,8 @@ fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/" + id)
             `<h1 class="titulo-listados">${data.title}</h1>
             <img class="img-detailtrack" src="${data.album.cover_medium}"/> 
             <audio controls>
-            <source src="${data.preview}" type="audio/mpeg">
-            </audio>
-            `
+                <source src="${data.preview}" type="audio/mpeg">
+            </audio>`
 
         contenedor2.innerHTML +=
             `<a href="./detail-artist.html?id=${data.artist.id}">

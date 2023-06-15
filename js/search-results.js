@@ -71,7 +71,7 @@ fetch(endpoint)
                     `<article class="cancion-buscada">
                         <img class="img-search" src="${data.data[i].album.cover_medium}">
                         <a href="detail-track.html?id=${data.data[i].id}">
-                            <h2>${data.data[i].title}</h2>
+                            <h2 class="nombre-cancion-buscada">${data.data[i].title}</h2>
                         </a>
                     </article>`;
             }
@@ -87,7 +87,7 @@ fetch(endpoint)
                             `<article class="cancion-buscada">
                                 <img class="img-search" src="${data.data[i].album.cover_medium}">
                                 <a href="detail-track.html?id=${data.data[i].id}">
-                                    <h2>${data.data[i].title}</h2>
+                                    <h2 class="nombre-cancion-buscada">${data.data[i].title}</h2>
                                 </a>
                             </article>`;
                     }
@@ -99,7 +99,7 @@ fetch(endpoint)
                             `<article class="cancion-buscada">
                                 <img class="img-search" src="${data.data[i].album.cover_medium}">
                                 <a href="detail-track.html?id=${data.data[i].id}">
-                                    <h2>${data.data[i].title}</h2>
+                                    <h2 class="nombre-cancion-buscada">${data.data[i].title}</h2>
                                 </a>
                             </article>`;
                     }
