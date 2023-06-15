@@ -1,22 +1,24 @@
+// BOTÓN DARK Y LIGHT MODE
 let contenedorLight = document.querySelector("main")
 let modoBoton = document.querySelector("#light-mode")
 let guardado = localStorage.getItem('modo')
-if (guardado == 'dark'){
+
+if (guardado == 'dark') {
     contenedorLight.classList.add('dark-mode')
 }
-if (guardado == 'light'){
+else if (guardado == 'light') {
     contenedorLight.classList.add('light-mode')
 }
-modoBoton.addEventListener('click',function(){
+
+modoBoton.addEventListener('click', function () {
     contenedorLight.classList.toggle('dark-mode')
     contenedorLight.classList.toggle('light-mode')
-    if (contenedorLight.classList.contains('dark-mode')){
-        localStorage.setItem('modo','dark')
+    if (contenedorLight.classList.contains('dark-mode')) {
+        localStorage.setItem('modo', 'dark')
     }
-    else{
-        localStorage.setItem('modo','light')  
+    else {
+        localStorage.setItem('modo', 'light')
     }
-
 })
 
 
@@ -25,7 +27,7 @@ let buscador = document.querySelector("#buscador")
 let formulario = document.querySelector("#contenedor-form")
 
 formulario.addEventListener('submit', function (e) {
-    
+
     let terminoBuscador = buscador.value.trim();
 
     if (terminoBuscador === "") {
@@ -33,7 +35,7 @@ formulario.addEventListener('submit', function (e) {
         alert("No puede dejar el campo vacío")
         return
     }
-    if (terminoBuscador.length < 3) {
+    else if (terminoBuscador.length < 3) {
         e.preventDefault()
         alert("Su búsqueda debe tener más de 3 caracteres")
         return
@@ -58,15 +60,15 @@ fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/" + id)
     })
     .then(function (data) {
         console.log(data)
-        contenedor.innerHTML += 
+        contenedor.innerHTML +=
             `<h1 class="titulo-listados">${data.title}</h1>
             <img class="img-detailtrack" src="${data.album.cover_medium}"/> 
             <audio controls>
             <source src="${data.preview}" type="audio/mpeg">
             </audio>
-            `            
-        
-        contenedor2.innerHTML += 
+            `
+
+        contenedor2.innerHTML +=
             `<a href="./detail-artist.html?id=${data.artist.id}">
                 <h4 class="contenido-info-track">Artista: ${data.artist.name}</h4>
             </a>
@@ -83,35 +85,35 @@ fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/track/" + id)
         console.log("el error es:" + error)
     })
 
-    let favoritos = []
-    let recupero = localStorage.getItem('favoritos');
-    if (recupero != null) {
-        favoritos = JSON.parse(recupero);
+let favoritos = []
+let recupero = localStorage.getItem('favoritos');
+if (recupero != null) {
+    favoritos = JSON.parse(recupero);
+}
+let botonFav = document.querySelector("#fav")
+if (favoritos.includes(id)) {
+    botonFav.innerText = "Quitar de playlist"
+}
+
+
+
+botonFav.addEventListener('click', function (e) {
+    console.log(favoritos)
+    if (favoritos.includes(id)) {
+        let indice = favoritos.indexOf(id)
+        console.log(indice)
+        favoritos.splice(indice, 1)
+        botonFav.innerText = "Agregar a playlist"
     }
-    let botonFav = document.querySelector("#fav")
-    if (favoritos.includes(id)){
+    else {
+        favoritos.push(id)
         botonFav.innerText = "Quitar de playlist"
+        console.log(favoritos)
     }
-
-
-    
-    botonFav.addEventListener('click', function (e) {
-        console.log(favoritos)
-        if (favoritos.includes(id)) {
-            let indice = favoritos.indexOf(id)
-            console.log(indice)
-            favoritos.splice(indice, 1)
-            botonFav.innerText = "Agregar a playlist"
-        }
-        else {
-            favoritos.push(id)
-            botonFav.innerText = "Quitar de playlist"
-            console.log(favoritos)
-        }
-        let arrayTostring = JSON.stringify(favoritos);
-        localStorage.setItem('favoritos', arrayTostring)
-        console.log(favoritos)
-    })
+    let arrayTostring = JSON.stringify(favoritos);
+    localStorage.setItem('favoritos', arrayTostring)
+    console.log(favoritos)
+})
 
 
 

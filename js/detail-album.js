@@ -2,22 +2,23 @@
 let contenedorLight = document.querySelector("main")
 let modoBoton = document.querySelector("#light-mode")
 let guardado = localStorage.getItem('modo')
-if (guardado == 'dark'){
+
+if (guardado == 'dark') {
     contenedorLight.classList.add('dark-mode')
 }
-if (guardado == 'light'){
+else if (guardado == 'light') {
     contenedorLight.classList.add('light-mode')
 }
-modoBoton.addEventListener('click',function(){
+
+modoBoton.addEventListener('click', function () {
     contenedorLight.classList.toggle('dark-mode')
     contenedorLight.classList.toggle('light-mode')
-    if (contenedorLight.classList.contains('dark-mode')){
-        localStorage.setItem('modo','dark')
+    if (contenedorLight.classList.contains('dark-mode')) {
+        localStorage.setItem('modo', 'dark')
     }
-    else{
-        localStorage.setItem('modo','light')  
+    else {
+        localStorage.setItem('modo', 'light')
     }
-
 })
 
 
@@ -26,7 +27,7 @@ let buscador = document.querySelector("#buscador")
 let formulario = document.querySelector("#contenedor-form")
 
 formulario.addEventListener('submit', function (e) {
-    
+
     let terminoBuscador = buscador.value.trim();
 
     if (terminoBuscador === "") {
@@ -34,7 +35,7 @@ formulario.addEventListener('submit', function (e) {
         alert("No puede dejar el campo vacío")
         return
     }
-    if (terminoBuscador.length < 3) {
+    else if (terminoBuscador.length < 3) {
         e.preventDefault()
         alert("Su búsqueda debe tener más de 3 caracteres")
         return
@@ -50,7 +51,7 @@ console.log(id)
 
 // CAPTURANDO LA SECCIÓN DONDE QUIERO AGREGAR EL CONTENIDO Y AGREGÁNDOLO
 let contenedor = document.querySelector(".detail-album")
-let contenedor2= document.querySelector(".info-album")
+let contenedor2 = document.querySelector(".info-album")
 
 fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/album/" + id)
     .then(function (response) {
@@ -58,11 +59,11 @@ fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/album/" + id)
     })
     .then(function (data) {
         console.log(data)
-        contenedor.innerHTML += 
+        contenedor.innerHTML +=
             `<h1 class="titulo-listados">${data.title}</h1>
             <img class="img-detailalbum" src="${data.cover_medium}"/>`
-       
-        contenedor2.innerHTML += 
+
+        contenedor2.innerHTML +=
             `<a href="detail-artist.html?id=${data.artist.id}">
                 <h4 class="contenido-info-album"> Artista: ${data.artist.name}</h4>
             </a>
@@ -72,12 +73,12 @@ fetch("https://api.allorigins.win/raw?url=https://api.deezer.com/album/" + id)
             <div>
                 <h4 class="contenido-info-album"> Fecha de lanzamiento: ${data.release_date}</h4>
             </div>`
-            
-          
+
+
         let canciones = document.querySelector(".canciones-detail-album")
-        for (let i = 0; i<10; i++) {
-            canciones.innerHTML += 
-            `<li class="listados">
+        for (let i = 0; i < 10; i++) {
+            canciones.innerHTML +=
+                `<li class="listados">
                 <img class="img-listados" src="${data.tracks.data[i].album.cover_medium}">
                  <a href= "./detail-track.html?id=${data.tracks.data[i].id}">
                     <h4 class="nombreTrack"> "${data.tracks.data[i].title_short}"</h4>

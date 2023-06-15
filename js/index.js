@@ -1,22 +1,24 @@
+// BOTÓN DARK Y LIGHT MODE
 let contenedorLight = document.querySelector("main")
 let modoBoton = document.querySelector("#light-mode")
 let guardado = localStorage.getItem('modo')
-if (guardado == 'dark'){
+
+if (guardado == 'dark') {
     contenedorLight.classList.add('dark-mode')
 }
-if (guardado == 'light'){
+else if (guardado == 'light') {
     contenedorLight.classList.add('light-mode')
 }
-modoBoton.addEventListener('click',function(){
+
+modoBoton.addEventListener('click', function () {
     contenedorLight.classList.toggle('dark-mode')
     contenedorLight.classList.toggle('light-mode')
-    if (contenedorLight.classList.contains('dark-mode')){
-        localStorage.setItem('modo','dark')
+    if (contenedorLight.classList.contains('dark-mode')) {
+        localStorage.setItem('modo', 'dark')
     }
-    else{
-        localStorage.setItem('modo','light')  
+    else {
+        localStorage.setItem('modo', 'light')
     }
-
 })
 
 
@@ -25,7 +27,7 @@ let buscador = document.querySelector("#buscador")
 let formulario = document.querySelector("#contenedor-form")
 
 formulario.addEventListener('submit', function (e) {
-    
+
     let terminoBuscador = buscador.value.trim();
 
     if (terminoBuscador === "") {
@@ -33,7 +35,7 @@ formulario.addEventListener('submit', function (e) {
         alert("No puede dejar el campo vacío")
         return
     }
-    if (terminoBuscador.length < 3) {
+    else if (terminoBuscador.length < 3) {
         e.preventDefault()
         alert("Su búsqueda debe tener más de 3 caracteres")
         return
@@ -50,8 +52,8 @@ fetch("https://cors-anywhere.herokuapp.com/" + "https://api.deezer.com/chart")
         console.log(data)
         let contenedorTrack = document.querySelector(".canciones")
         for (let i = 0; i < 5; i++)
-            contenedorTrack.innerHTML += 
-            `<li class="listados"> 
+            contenedorTrack.innerHTML +=
+                `<li class="listados"> 
                 <img class="img-listados" src="${data.tracks.data[i].album.cover}">   
                 <a href="./detail-track.html?id=${data.tracks.data[i].id}">
                     <h4 class="nombreTrack">${data.tracks.data[i].title}</h4>
@@ -65,7 +67,7 @@ fetch("https://cors-anywhere.herokuapp.com/" + "https://api.deezer.com/chart")
         console.log(error)
     })
 
-    
+
 // LISTA ÁLBUMES
 fetch("https://cors-anywhere.herokuapp.com/" + "https://api.deezer.com/chart/0/albums")
     .then(function (response) {
@@ -75,8 +77,8 @@ fetch("https://cors-anywhere.herokuapp.com/" + "https://api.deezer.com/chart/0/a
         console.log(data);
         let contenedor = document.querySelector(".albumes")
         for (let i = 0; i < 5; i++)
-            contenedor.innerHTML += 
-            `<li class="listados"> 
+            contenedor.innerHTML +=
+                `<li class="listados"> 
                 <img class="img-listados" src="${data.data[i].cover}">
                 <a href="./detail-album.html?id=${data.data[i].id}"> 
                     <h4 class="tituloAlbum">"${data.data[i].title}"</h4> 

@@ -1,22 +1,24 @@
+// BOTÓN DARK Y LIGHT MODE
 let contenedorLight = document.querySelector("main")
 let modoBoton = document.querySelector("#light-mode")
 let guardado = localStorage.getItem('modo')
-if (guardado == 'dark'){
+
+if (guardado == 'dark') {
     contenedorLight.classList.add('dark-mode')
 }
-if (guardado == 'light'){
+else if (guardado == 'light') {
     contenedorLight.classList.add('light-mode')
 }
-modoBoton.addEventListener('click',function(){
+
+modoBoton.addEventListener('click', function () {
     contenedorLight.classList.toggle('dark-mode')
     contenedorLight.classList.toggle('light-mode')
-    if (contenedorLight.classList.contains('dark-mode')){
-        localStorage.setItem('modo','dark')
+    if (contenedorLight.classList.contains('dark-mode')) {
+        localStorage.setItem('modo', 'dark')
     }
-    else{
-        localStorage.setItem('modo','light')  
+    else {
+        localStorage.setItem('modo', 'light')
     }
-
 })
 
 
@@ -25,7 +27,7 @@ let buscador = document.querySelector("#buscador")
 let formulario = document.querySelector("#contenedor-form")
 
 formulario.addEventListener('submit', function (e) {
-    
+
     let terminoBuscador = buscador.value.trim();
 
     if (terminoBuscador === "") {
@@ -33,7 +35,7 @@ formulario.addEventListener('submit', function (e) {
         alert("No puede dejar el campo vacío")
         return
     }
-    if (terminoBuscador.length < 3) {
+    else if (terminoBuscador.length < 3) {
         e.preventDefault()
         alert("Su búsqueda debe tener más de 3 caracteres")
         return
