@@ -451,12 +451,16 @@ footer {
     padding: 1% 1% 2% 1%;
 }
 
+.ver-mas{
+    height: 10vh;
+}
+
 #ver-mas {
     display: none;
     margin-right: 2%;
     margin-left: auto;
     margin-top: 0%;
-    margin-bottom: 2%;
+    margin-bottom: 0%;
     background-color: yellow;
     height: 6vh;
     width: 8%;
@@ -656,4 +660,9 @@ footer {
         height: 4vh;
         font-size: x-small;
     }
+
+    .ver-mas{
+        height: 5vh;
+    }
+    
 }
