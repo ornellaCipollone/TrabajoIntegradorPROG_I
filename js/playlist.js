@@ -57,7 +57,6 @@ for (i = 0; i < favoritos.length; i++) {
     console.log(id)
 
     fetch(url)
-
         .then(function (response) {
             let respuesta = response.json()
             return respuesta
@@ -66,11 +65,11 @@ for (i = 0; i < favoritos.length; i++) {
             console.log(data)
             contenedor.innerHTML +=
                 `<article class="article-playlist"> 
-                <img class="img-playlist" src="${data.album.cover_medium}" >
-                <a class="link-id" href= "detail-track.html?id=${data.id}">
-                    <h2>${data.title}</h2>
-                </a>
-            </article>`
+                    <img class="img-playlist" src="${data.album.cover_medium}" >
+                    <a class="link-id" href= "detail-track.html?id=${data.id}">
+                        <h2 class="nombre-cancion-playlist">${data.title}</h2>
+                    </a>
+                </article>`
         })
         .catch(function (error) {
             console.log(error)

@@ -92,6 +92,7 @@ header {
     height: 5vh;
     background-color: yellow;
     border-radius: 10px;
+    font-weight: bold;
 }
 
 .menu-navegacion {
@@ -452,6 +453,17 @@ footer {
 
 #ver-mas {
     display: none;
+    margin-right: 2%;
+    margin-left: auto;
+    margin-top: 0%;
+    margin-bottom: 2%;
+    background-color: yellow;
+    height: 6vh;
+    width: 8%;
+    font-weight: bold;
+    font-size: medium;
+    border: solid 3px black;
+    border-radius: 20px;
 }
 
 /*FIN DE SEARCH RESULTS*/
@@ -517,13 +529,13 @@ footer {
     }
 
     #buscador {
-        width: 75%;
+        width: 70%;
         font-size: xx-small;
     }
 
     #submit {
         font-size: xx-small;
-        width: 25%;
+        width: fit-content;
         height: 4vh;
     }
 
@@ -632,6 +644,16 @@ footer {
     }
 
     .nombre-cancion-buscada {
+        font-size: x-small;
+    }
+
+    .nombre-cancion-playlist {
+        font-size: x-small;
+    }
+
+    #ver-mas{
+        width: fit-content;
+        height: 4vh;
         font-size: x-small;
     }
 }
